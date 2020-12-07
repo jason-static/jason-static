@@ -1,12 +1,12 @@
 <div>
-  <h2>{{ data.blog_posts.title }}</h2>
-  <h3>{{ data.blog_posts.date.year }}-{{ data.blog_posts.date.month }}-{{ data.blog_posts.date.day }}</h3>
-  <p>{{ data.blog_posts.title }}}</p>
+  <h2>{{ post.title }}</h2>
+  <h3>{{ post.date }}</h3>
+  <p>{{ post.content }}}</p>
   <!--
-     Data otherwise nested in an array (eg blog_posts: [...]) is
-     accessed directly via dot notation for the element corresponding
-     to url params (ie '[data.blog_posts.date.month]/[data.blog_posts.slug]').
+    Local variables like `post` are defined in `pages.json`
+    in the property `"_post": "data.blog_posts".
 
-     We may have to switch to more explicit definitons for template-route-data relationships
+    In the case of array data, the local instance is the same
+    one used to generate the url/filename.
   -->
 </div>
