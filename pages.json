@@ -6,6 +6,9 @@
   },
   "blog": {
     "index": "data.blog_posts",
-    "[date]": "data.blog_posts"
+    "[date.year]": {
+      "index": "data.blog_posts",
+      "[date.month]/[slug]": "data.blog_posts"
+    }
   }
 }
