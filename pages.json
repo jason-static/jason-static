@@ -1,0 +1,11 @@
+{
+  "index": null,
+  "employees": {
+    "index": "data.employees",
+    "[name]": "data.employees"
+  },
+  "blog": {
+    "index": "data.blog_posts",
+    "[date]": "data.blog_posts"
+  }
+}
