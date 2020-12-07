@@ -1,14 +1,14 @@
 {
-  "index": null,
+  "index": "index",
   "employees": {
-    "index": "data.employees",
-    "[name]": "data.employees"
+    "index": "employee-list",
+    "[data.employees.name]": "employee-detail"
   },
   "blog": {
-    "index": "data.blog_posts",
-    "[date.year]": {
-      "index": "data.blog_posts",
-      "[date.month]/[slug]": "data.blog_posts"
+    "index": "blog-list",
+    "[data.blog_posts.date.year]": {
+      "index": "blog-list-year",
+      "[data.blog_posts.date.month]/[data.blog_posts.slug]": "blog-post"
     }
   }
 }

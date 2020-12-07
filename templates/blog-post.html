@@ -1,0 +1,12 @@
+<div>
+  <h2>{{ data.blog_posts.title }}</h2>
+  <h3>{{ data.blog_posts.date.year }}-{{ data.blog_posts.date.month }}-{{ data.blog_posts.date.day }}</h3>
+  <p>{{ data.blog_posts.title }}}</p>
+  <!--
+     Data otherwise nested in an array (eg blog_posts: [...]) is
+     accessed directly via dot notation for the element corresponding
+     to url params (ie '[data.blog_posts.date.month]/[data.blog_posts.slug]').
+
+     We may have to switch to more explicit definitons for template-route-data relationships
+  -->
+</div>
