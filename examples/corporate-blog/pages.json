@@ -1,14 +1,17 @@
 {
-  "index": "index",
-  "employees": {
-    "index": "employee-list",
-    "[data.employees.name]": "employee-detail"
+  "/": {"template": "index.html"},
+  "/employees": {
+    "/": {"template": "employee-list.html"},
+    "/[employee.name]": {
+      "_employee": "data.employees",
+      "template": "employee-detail.html"
+    }
   },
-  "blog": {
-    "index": "blog-list",
-    "[data.blog_posts.date.year]": {
-      "index": "blog-list-year",
-      "[data.blog_posts.date.month]/[data.blog_posts.slug]": "blog-post"
+  "/blog": {
+    "/": {"template": "blog-list.html"},
+    "/[post.slug]": {
+      "_post": "data.blog_posts",
+      "template": "blog-post.html"
     }
   }
 }
