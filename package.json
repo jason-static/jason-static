@@ -1,0 +1,22 @@
+{
+  "name": "jason-static",
+  "version": "0.7.0",
+  "description": "A data-driven static site generator",
+  "bin": {"jason": "./jason.js"},
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jason-static/jason-static.git"
+  },
+  "author": "Wes Lord",
+  "license": "ISC",
+  "homepage": "https://github.com/jason-static/jason-static#readme",
+
+  "scripts": {
+    "test:iasip": "./jason.js test/"
+  },
+  "dependencies": {
+    "fs-extra": "^9.0.1",
+    "mustache": "^4.1.0"
+  }
+}

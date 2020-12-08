@@ -1,0 +1,70 @@
+{
+
+    "/index.html": {"@template": "index.html"},
+    "/[data.company.name].html": {"@template": "company.html"},
+    "/data/[company.name].html": {
+      "@template": "company.html",
+      "_company": "data.company"
+    },
+    "/variable/[company_name].html": {
+        "@template": "company.html",
+        "_company_name": "data.company.name"
+    },
+    "/menu-flat/[dish].html": {
+        "@template": "menu_item.html",
+        "_dish": "data.company.menu"
+    },
+    "/menu-nested": {
+        "/[dish].html": {
+            "@template": "menu_item.html",
+            "_dish": "data.company.menu"
+        } 
+    },
+    "/[company.name]/menu-1": {
+        "_company": "data.company",
+        "/[dish].html": {
+            "@template": "menu_item.html",
+            "_dish": "data.company.menu"
+        } 
+    },
+    "/[company_name]/menu-2": {
+        "_company_name": "data.company.name",
+        "/[dish].html": {
+            "@template": "menu_item.html",
+            "_dish": "data.company.menu"
+        }
+    },
+    "/[company.name]/menu-3/[dish].html": {
+        "@template": "menu_item.html",
+        "_company": "data.company",
+        "_dish": "data.company.menu"
+    },
+    "/[company_name]/menu-4/[dish].html": {
+        "@template": "menu_item.html",
+        "_company_name": "data.company.name",
+        "_dish": "data.company.menu"
+    },
+    "/[employee.name]": {
+        "@template": "employee.html",
+        "_employee": "data.company.employees"
+    },
+    "/personal_recipe/[employee.name]/[dish]": {
+        "@template": "personal_recipe.html",
+        "_employee": "data.company.employees",
+        "_dish": "data.company.menu"
+    },
+    "/personal_recipe_nested/[employee.name]": {
+        "_employee": "data.company.employees",
+        "/[dish]": {
+            "@template": "personal_recipe.html",
+            "_dish": "data.company.menu"
+        }
+    },
+    "/personal_recipe_propigate": {
+        "_employee": "data.company.employees",
+        "/[employee.name]/[dish]": {
+            "@template": "personal_recipe.html",
+            "_dish": "data.company.menu"
+        }
+    }
+}

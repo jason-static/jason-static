@@ -1,0 +1,25 @@
+{
+    "company": {
+      "name": "Paddys Pub",
+      "menu": [
+        "Milk Steak",
+        "Fight Milk",
+        "Wolf Cola",
+        "Rum Ham"
+      ],
+      "employees": [
+        {
+          "name": "Charlie"
+        },
+        {
+          "name": "Dee"
+        },
+        {
+          "name": "Dennis"
+        },
+        {
+          "name": "Mac"
+        }
+      ]
+    }
+  }
