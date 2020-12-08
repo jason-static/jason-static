@@ -2,16 +2,9 @@
   "/": {"template": "index.html"},
   "/employees": {
     "/": {"template": "employee-list.html"},
-    "/[employee.name]": {
+    "/[employee]": {
       "_employee": "data.employees",
       "template": "employee-detail.html"
-    }
-  },
-  "/blog": {
-    "/": {"template": "blog-list.html"},
-    "/[post.slug]": {
-      "_post": "data.blog_posts",
-      "template": "blog-post.html"
     }
   }
 }
