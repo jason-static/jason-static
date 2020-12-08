@@ -1,0 +1,29 @@
+{
+  "artists": [
+    {
+      "name": "The Amazing Confoundo",
+      "albums": [
+        {
+          "title": "Bopping in the Free World",
+          "tracks": [
+            {
+              "number": 1,
+              "title": "Bloops and bleeps",
+              "length": "1:32"
+            },
+            {
+              "number": 2,
+              "title": "Another one bites the gust",
+              "length": "4:22"
+            },
+            {
+              "number": 3,
+              "title": "Abracadabbler",
+              "length": "3:29"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

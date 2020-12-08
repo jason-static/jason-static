@@ -1,15 +1,15 @@
 {
-  "/": {"template": "index.html"},
-  "/employees": {
-    "/": {"template": "employee-list.html"},
-    "/[employee.name]": {
+  "index": {"template": "index.html"},
+  "employees": {
+    "index": {"template": "employee-list.html"},
+    "[employee.name]": {
       "_employee": "data.employees",
       "template": "employee-detail.html"
     }
   },
-  "/blog": {
-    "/": {"template": "blog-list.html"},
-    "/[post.slug]": {
+  "blog": {
+    "index": {"template": "blog-list.html"},
+    "[post.date]": {
       "_post": "data.blog_posts",
       "template": "blog-post.html"
     }

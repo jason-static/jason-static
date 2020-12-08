@@ -1,0 +1,9 @@
+{
+  "/index": {"template": "index.html"},
+  "/[artist.name]/[album.title]/[track.number]": {
+    "_track": "data.tracks",
+    "_artist": "track.artist",
+    "_album": "track.album",
+    "template": "track-details.html"
+  }
+}

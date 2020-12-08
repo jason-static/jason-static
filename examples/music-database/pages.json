@@ -1,0 +1,18 @@
+{
+  "/index": {"template": "index.html"},
+  "/artists": {
+    "index": {"template": "artist-list.html"},
+    "[artist.name]": {
+      "_artist": "data.artist",
+      "template": "artist-profile.html",
+      "/album/[album.title]": {
+        "_album": "artist.albums",
+        "template": "track-listing.html",
+        "/track/[track.number]": {
+          "_track": "album.track",
+          "template": "track-detail.html"
+        }
+      }
+    }
+  }
+}
