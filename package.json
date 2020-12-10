@@ -1,3 +1,6 @@
 {
-    "type": "module"
+    "type": "module",
+    "scripts":{
+        "example:blog": "./jason.js examples/corporate-blog/data.json examples/corporate-blog/pages.json"
+    }
 }
