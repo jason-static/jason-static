@@ -1,10 +1,33 @@
 {
-  "/": {"template": "index.html"},
+  "/index.html": {"template": "index.html"},
+  "/[company].html": {
+    "template": "whatever.html",
+    "_company": "data.title"
+  },
+  "/[data.title].html": {"template": "whatever.html"},
   "/employees": {
-    "/": {"template": "employee-list.html"},
-    "/[employee]": {
+    "/index.html": {"template": "employee-list.html"},
+    "/[employee].html": {
       "_employee": "data.employees",
       "template": "employee-detail.html"
+    },
+    "/[employee]": {
+      "_employee": "data.employees",
+      "/index.html": {"template": "employee-detail.html"}
     }
+  },
+  "/employees.html": {"template": "employee-list.html"},
+  "/employees/index.html": {"template": "employee-list.html"},
+  "/employees/[employee].html": {
+    "_employee": "data.employees",
+    "template": "employee-detail.html"
+  },
+  "/employees/data/[data.employees].html": {
+    "template": "employee-detail.html"
+  },
+  "/[company]/[employee].html": {
+    "_company": "data.title",
+    "_employee": "data.employees",
+    "template": "employee-detail.html"
   }
 }
