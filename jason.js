@@ -35,7 +35,6 @@ const recursePaths = (parentPath, parentPathData, context) => {
                     innerVars[name] = getDottedPath(context, dataPath)
             })
 
-            
             const paths = []
 
             const pathPatterns = key.match(/\[.+?\]/g)
@@ -49,10 +48,31 @@ const recursePaths = (parentPath, parentPathData, context) => {
                     }
                 })
 
-                // NOTE: 'data.___' paths are not eligible keys for array refs,
-                // no defined variable to assign instances to
-
                 console.log('ip', innerPatterns)
+
+
+
+                // validate pathPatterns
+                // - does data exist at path?
+                //   - accepatable:
+                //     - direct data reference to usable string
+                //       - (eg /[data.company.title])
+                //     - variable assigned to useable string
+                //       - (eg /[title].html :: _title: data.company.title)
+                //     - subpath of variable assigned to useable string
+                //       - (eg /[company.title].html :: _company: data.company)
+                //     - variable assigned to array of usable strings
+                //       - (eg /[name].html :: _name: data.company.employee_names)
+                //     - subpath of variable assigned to array of objects where that subpath is a direct path to usable string
+                //       - (eg /[employee.name].html :: _employee: data.company.employees)
+                //   - not acceptable:
+                //     - path containing an array not directly assigned to a variable
+                //       - (eg /[data.company.employee.name].html)
+                //       - (eg /[company.employee.name].html :: [_comapny]: data.company)
+                //       - (eg /[company.employee_names].html :: [_company]: data.company)
+                // - ultimate data type must be valid url string
+
+
 
                 // const newPaths = innerPatterns.reduce((urlDef, {pattern, replacements}) => {
                 //     return urlDef.replace(`[${pattern}]`, replacements[0])
