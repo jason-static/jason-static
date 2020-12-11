@@ -22,9 +22,6 @@
     "_employee": "data.employees",
     "template": "employee-detail.html"
   },
-  "/employees/data/[data.employees].html": {
-    "template": "employee-detail.html"
-  },
   "/[company]/[employee].html": {
     "_company": "data.title",
     "_employee": "data.employees",

@@ -1,6 +1,7 @@
 {
     "type": "module",
     "scripts":{
-        "example:blog": "./jason.js examples/corporate-blog/data.json examples/corporate-blog/pages.json"
+        "example:blog": "./jason.js examples/corporate-blog/data.json examples/corporate-blog/pages.json",
+        "example:iasip": "./jason.js examples/always-sunny/data.json examples/always-sunny/pages.json"
     }
 }
