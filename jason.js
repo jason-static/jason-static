@@ -17,12 +17,22 @@ const getDottedPath = (data, dataPath) => {
     }, data)
 }
 
+const createFileAtPath = (path, contents) => {
+    const pathComponents = path.split('/')
+    if (pathComponents.length > 1) {
+        const dirPath = pathComponents.slice(0, -1).join('/')
+        fs.mkdirSync(dirPath, { recursive: true })
+    }
+    fs.writeFileSync(path, contents, { flag: 'wx' })
+}
+
 const recursePaths = (parentPath, parentPathData, context) => {
     const templateFile = parentPathData["template"]
     if (typeof templateFile === "string") {
         const templatePath = (process.argv[2] || "./") + "templates/" + templateFile
         const templateString = fs.readFileSync(templatePath).toString()
-        console.log(parentPath, "\t", Mustache.render(templateString, context))
+        const renderedString = Mustache.render(templateString, context)
+        createFileAtPath("build/" + parentPath, renderedString)
     }
 
     Object.keys(parentPathData)

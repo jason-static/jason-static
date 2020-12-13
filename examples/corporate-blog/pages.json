@@ -4,7 +4,7 @@
     "template": "whatever.html",
     "_company": "data.title"
   },
-  "/[data.title].html": {"template": "whatever.html"},
+  "/dref/[data.title].html": {"template": "whatever.html"},
   "/employees": {
     "/index.html": {"template": "employee-list.html"},
     "/[employee].html": {
