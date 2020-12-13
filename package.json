@@ -1,4 +1,7 @@
 {
+    "name": "jason",
+    "version": "0.1.0",
+    "bin": "./jason.js",
     "type": "module",
     "scripts": {
         "example:blog": "./jason.js examples/corporate-blog/",
