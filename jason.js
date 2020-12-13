@@ -1,10 +1,12 @@
 #!/usr/bin/env node
 import * as fs from "fs"
 
+import Mustache from 'mustache'
+
 import { crossObject } from "./crossObject.js"
 
-const dataPath = process.argv[2] || "data.json"
-const pagesPath = process.argv[3] || "pages.json"
+const dataPath = (process.argv[2] || "./") + "data.json"
+const pagesPath = (process.argv[2] || "./") + "pages.json"
 
 const data = JSON.parse(fs.readFileSync(dataPath))
 const pages = JSON.parse(fs.readFileSync(pagesPath))
@@ -18,7 +20,9 @@ const getDottedPath = (data, dataPath) => {
 const recursePaths = (parentPath, parentPathData, context) => {
     const templateFile = parentPathData["template"]
     if (typeof templateFile === "string") {
-        console.log(templateFile, "\t", parentPath)
+        const templatePath = (process.argv[2] || "./") + "templates/" + templateFile
+        const templateString = fs.readFileSync(templatePath).toString()
+        console.log(parentPath, "\t", Mustache.render(templateString, context))
     }
 
     Object.keys(parentPathData)

@@ -1,7 +1,10 @@
 {
     "type": "module",
-    "scripts":{
-        "example:blog": "./jason.js examples/corporate-blog/data.json examples/corporate-blog/pages.json",
-        "example:iasip": "./jason.js examples/always-sunny/data.json examples/always-sunny/pages.json"
+    "scripts": {
+        "example:blog": "./jason.js examples/corporate-blog/",
+        "example:iasip": "./jason.js examples/always-sunny/"
+    },
+    "dependencies": {
+        "mustache": "^4.1.0"
     }
 }
