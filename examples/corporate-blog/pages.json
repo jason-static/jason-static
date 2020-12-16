@@ -1,30 +1,30 @@
 {
-  "/index.html": {"template": "index.html"},
+  "/index.html": {"@template": "index.html"},
   "/[company].html": {
-    "template": "whatever.html",
+    "@template": "whatever.html",
     "_company": "data.title"
   },
-  "/data-co/[data.title].html": {"template": "whatever.html"},
+  "/data-co/[data.title].html": {"@template": "whatever.html"},
   "/employees1": {
-    "/index.html": {"template": "employee-list.html"},
+    "/index.html": {"@template": "employee-list.html"},
     "/[employee].html": {
       "_employee": "data.employees",
-      "template": "employee-detail.html"
+      "@template": "employee-detail.html"
     },
     "/[employee]": {
       "_employee": "data.employees",
-      "/index.html": {"template": "employee-detail.html"}
+      "/index.html": {"@template": "employee-detail.html"}
     }
   },
-  "/employees.html": {"template": "employee-list.html"},
-  "/employees2/index.html": {"template": "employee-list.html"},
+  "/employees.html": {"@template": "employee-list.html"},
+  "/employees2/index.html": {"@template": "employee-list.html"},
   "/employees2/[employee].html": {
     "_employee": "data.employees",
-    "template": "employee-detail.html"
+    "@template": "employee-detail.html"
   },
   "/[company]/[employee].html": {
     "_company": "data.title",
     "_employee": "data.employees",
-    "template": "employee-detail.html"
+    "@template": "employee-detail.html"
   }
 }

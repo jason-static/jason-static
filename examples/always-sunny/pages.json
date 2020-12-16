@@ -1,69 +1,69 @@
 {
 
-    "/index.html": {"template": "index.html"},
-    "/[data.company.name].html": {"template": "company.html"},
+    "/index.html": {"@template": "index.html"},
+    "/[data.company.name].html": {"@template": "company.html"},
     "/[company.name].html": {
-      "template": "company.html",
+      "@template": "company.html",
       "_company": "data.company"
     },
     "/[company_name].html": {
-        "template": "company.html",
+        "@template": "company.html",
         "_company_name": "data.company.name"
     },
     "/menu/[dish].html": {
-        "template": "menu_item.html",
+        "@template": "menu_item.html",
         "_dish": "data.company.menu"
     },
     "/menu": {
         "/[dish].html": {
-            "template": "menu_item.html",
+            "@template": "menu_item.html",
             "_dish": "data.company.menu"
         } 
     },
     "/[company.name]/menu": {
         "_company": "data.company",
         "/[dish].html": {
-            "template": "menu_item.html",
+            "@template": "menu_item.html",
             "_dish": "data.company.menu"
         } 
     },
     "/[company_name]/menu": {
         "_company_name": "data.company.name",
         "/[dish].html": {
-            "template": "menu_item.html",
+            "@template": "menu_item.html",
             "_dish": "data.company.menu"
         }
     },
     "/[company.name]/menu/[dish].html": {
-        "template": "menu_item.html",
+        "@template": "menu_item.html",
         "_company": "data.company",
         "_dish": "data.company.menu"
     },
     "/[company_name]/menu/[dish].html": {
-        "template": "menu_item.html",
+        "@template": "menu_item.html",
         "_company_name": "data.company.name",
         "_dish": "data.company.menu"
     },
     "/[employee.name]": {
-        "template": "employee.html",
+        "@template": "employee.html",
         "_employee": "data.company.employees"
     },
     "/personal_recipe/[employee.name]/[dish]": {
-        "template": "personal_recipe.html",
+        "@template": "personal_recipe.html",
         "_employee": "data.company.employees",
         "_dish": "data.company.menu"
     },
     "/personal_recipe_nested/[employee.name]": {
         "_employee": "data.company.employees",
         "/[dish]": {
-            "template": "personal_recipe.html",
+            "@template": "personal_recipe.html",
             "_dish": "data.company.menu"
         }
     },
     "/personal_recipe_propigate": {
         "_employee": "data.company.employees",
         "/[employee.name]/[dish]": {
-            "template": "personal_recipe.html",
+            "@template": "personal_recipe.html",
             "_dish": "data.company.menu"
         }
     }

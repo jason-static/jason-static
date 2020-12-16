@@ -33,7 +33,7 @@ const createFileAtPath = (filePath, contents) => {
 }
 
 const recursePaths = (parentPath, parentPathData, context) => {
-    const templateFile = parentPathData["template"]
+    const templateFile = parentPathData["@template"]
     if (typeof templateFile === "string") {
         const templatePath = (process.argv[2] || "./") + "templates/" + templateFile
         const templateString = fs.readFileSync(templatePath).toString()
