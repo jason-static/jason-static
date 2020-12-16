@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 import * as fs from "fs"
+import fsExtra from "fs-extra"
+import * as os from "os"
+import * as path from "path"
 
 import Mustache from 'mustache'
 
@@ -11,19 +14,22 @@ const pagesPath = (process.argv[2] || "./") + "pages.json"
 const data = JSON.parse(fs.readFileSync(dataPath))
 const pages = JSON.parse(fs.readFileSync(pagesPath))
 
+const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'jason-build-'))
+console.log(`Building in ${tempDir}/`)
+
 const getDottedPath = (data, dataPath) => {
     return dataPath.split(".").reduce((data, pathSeg) => {
         return data[pathSeg]
     }, data)
 }
 
-const createFileAtPath = (path, contents) => {
-    const pathComponents = path.split('/')
+const createFileAtPath = (filePath, contents) => {
+    const pathComponents = filePath.split('/')
     if (pathComponents.length > 1) {
         const dirPath = pathComponents.slice(0, -1).join('/')
         fs.mkdirSync(dirPath, { recursive: true })
     }
-    fs.writeFileSync(path, contents, { flag: 'wx' })
+    fs.writeFileSync(filePath, contents, { flag: 'wx' })
 }
 
 const recursePaths = (parentPath, parentPathData, context) => {
@@ -32,7 +38,11 @@ const recursePaths = (parentPath, parentPathData, context) => {
         const templatePath = (process.argv[2] || "./") + "templates/" + templateFile
         const templateString = fs.readFileSync(templatePath).toString()
         const renderedString = Mustache.render(templateString, context)
-        createFileAtPath("build/" + parentPath, renderedString)
+        console.log(`Creating ${parentPath}`)
+        createFileAtPath(
+            path.join(tempDir, parentPath),
+            renderedString
+        )
     }
 
     Object.keys(parentPathData)
@@ -128,3 +138,7 @@ const recursePaths = (parentPath, parentPathData, context) => {
 }
 
 recursePaths("", pages, { data })
+
+console.log('Copying files to ./build/')
+fsExtra.removeSync('build')
+fsExtra.moveSync(tempDir, 'build')

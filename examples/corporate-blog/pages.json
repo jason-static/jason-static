@@ -4,8 +4,8 @@
     "template": "whatever.html",
     "_company": "data.title"
   },
-  "/dref/[data.title].html": {"template": "whatever.html"},
-  "/employees": {
+  "/data-co/[data.title].html": {"template": "whatever.html"},
+  "/employees1": {
     "/index.html": {"template": "employee-list.html"},
     "/[employee].html": {
       "_employee": "data.employees",
@@ -17,8 +17,8 @@
     }
   },
   "/employees.html": {"template": "employee-list.html"},
-  "/employees/index.html": {"template": "employee-list.html"},
-  "/employees/[employee].html": {
+  "/employees2/index.html": {"template": "employee-list.html"},
+  "/employees2/[employee].html": {
     "_employee": "data.employees",
     "template": "employee-detail.html"
   },
