@@ -4,8 +4,7 @@
     "bin": {"jason": "./jason.js"},
     "type": "module",
     "scripts": {
-        "test:blog": "./jason.js test/corporate-blog/",
-        "test:iasip": "./jason.js test/always-sunny/"
+        "test:iasip": "./jason.js test/"
     },
     "dependencies": {
         "fs-extra": "^9.0.1",
